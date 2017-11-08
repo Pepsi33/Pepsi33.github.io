@@ -3,18 +3,19 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Pepsi33
-subtitle:
-description:
+title: 不羁的风
+subtitle: 岁月无声,海阔天空。
+description: 岁月无声,海阔天空。
 author: Pepsi33
-language:
-timezone:
+language: zh-Hans
+timezone: 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://fly33.top
 root: /
-permalink: :year/:month/:day/:title/
+#permalink: :year/:month/:day/:title/
+permalink: /blog/:title.html :year/:month/:day/:title/
 permalink_defaults:
 
 # Directory
@@ -70,7 +71,7 @@ per_page: 10
 pagination_dir: page
 
 # Extensions
-## Plugins: https://hexo.io/plugins/
+Plugins: hexo-generate-feed
 ## Themes: https://hexo.io/themes/
 theme: next
 
