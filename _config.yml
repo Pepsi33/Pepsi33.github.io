@@ -8,14 +8,14 @@ subtitle: 岁月无声,海阔天空。
 description: 岁月无声,海阔天空。
 author: Pepsi33
 language: zh-Hans
-timezone: Asia/Beijing
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://fly33.top
 root: /
-#permalink: :year/:month/:day/:title/
-permalink: /blog/:title.html :year/:month/:day/:title/
+permalink: :year/:month/:day/:title/
+#permalink: /blog/:title.html :year/:month/:day/:title/
 permalink_defaults:
 
 # Directory
