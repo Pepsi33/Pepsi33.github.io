@@ -239,7 +239,7 @@ post_wordcount:
   item_text: true
   wordcount: true   # 单篇 字数统计
   min2read: true    # 单篇 阅读时长
-  totalcount: false  # 网站 字数统计
+  totalcount: true  # 网站 字数统计
   separated_meta: true
 
 # Wechat Subscriber
@@ -568,7 +568,7 @@ busuanzi_count:
   site_pv_header: <i class="fa fa-eye"></i>
   site_pv_footer: <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
   # custom pv span for one page only
-  page_pv: true
+  page_pv: false
   page_pv_header: <i class="fa fa-file-o"></i>
   page_pv_footer: <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_pv"></span>人次</span>
 
