@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 不羁的风
-subtitle: 岁月无声,海阔天空。
+title: Pepsi33's blog
+subtitle: Javascript Developer
 description: 岁月无声,海阔天空。
 author: Pepsi33
 language: zh-Hans
@@ -56,7 +56,12 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+  编程: programming
+  学习: study
+  生活: life
+  其他: other
 tag_map:
+  
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
