@@ -92,7 +92,7 @@ menu:
   #archives: /archives || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
-  #commonweal: /404 || heartbeat
+  commonweal: /404 || heartbeat
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -285,7 +285,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: night
+highlight_theme: normal
 
 
 # ---------------------------------------------------------------
@@ -403,7 +403,7 @@ valine:
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-#livere_uid: your uid
+livere_uid: 'Mi8xLzM='
 
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
@@ -814,6 +814,9 @@ vendors:
   # https://github.com/revir/need-more-share2
   needMoreShare2:
 
+# Online contact
+daovoice: true
+daovoice_app_id: '6dd5a0ab'
 
 # Assets
 css: css
