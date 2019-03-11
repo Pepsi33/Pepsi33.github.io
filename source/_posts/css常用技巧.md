@@ -1,7 +1,8 @@
 ---
 title: css常用技巧
 date: 2017-12-22 11:30:08
-tags: ["CSS"]
+tags:
+ - css
 categories: 学习
 ---
 
@@ -17,6 +18,7 @@ img.desaturate {
     -o-filter: grayscale(100%);
 }
 ```
+<!--more-->
 
 2.**使用 :not() 在菜单上应用/取消应用边框**
 ```css
@@ -44,7 +46,6 @@ img.desaturate {
   border-left: 1px solid #666;
 }
 ```
-<!--more-->
 
 3.**页面顶部阴影**
 下面这个简单的 CSS3 代码片段可以给网页加上漂亮的顶部阴影效果：
