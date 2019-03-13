@@ -36,4 +36,13 @@ console.log(Object.getPrototypeOf(a) === Person.prototype)   // true
 下面两句代码产生了一样的结果
 var a = creatObj(Person, 'seven')
 var a = new Person('seven')
+
+// 另一种写法
+function creatObj() {
+    var Constructor = [].shift.call(arguments),
+        obj = Object.create(Constructor.prototype);
+    var ret = Constructor.apply(obj, arguments);
+    return typeof ret === 'Object' ? ret : obj;
+}
+
 ```

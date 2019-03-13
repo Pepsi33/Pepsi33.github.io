@@ -35,6 +35,8 @@ categories: 学习
 
 > 这段代码的关键部分是 modules[name] = impl.apply(impl, deps)。这为一个模块调用了它的定义的包装函数（传入所有依赖），并将返回值，也就是模块的API，存储到一个用名称追踪的内部模块列表中。
 
+<!--more-->
+
 ``` javascript
 MyModules.define( "bar", [], function(){
 	function hello(who) {
