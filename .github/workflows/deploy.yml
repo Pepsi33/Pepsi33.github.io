@@ -1,5 +1,4 @@
 name: CI
-
 on:
   push:
     branches:
@@ -8,10 +7,6 @@ on:
 env:
   GIT_USER: Pepsi33
   GIT_EMAIL: 319853035@qq.com
-  THEME_REPO: sanonz/hexo-theme-concise
-  THEME_BRANCH: master
-  DEPLOY_REPO: sanonz/sanonz.github.io
-  DEPLOY_BRANCH: master
 
 jobs:
   build:
@@ -23,68 +18,17 @@ jobs:
         node_version: [12.x]
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Checkout theme repo
-        uses: actions/checkout@v2
-        with:
-          repository: ${{ env.THEME_REPO }}
-          ref: ${{ env.THEME_BRANCH }}
-          path: themes/concise
-
-      - name: Checkout deploy repo
-        uses: actions/checkout@v2
-        with:
-          repository: ${{ env.DEPLOY_REPO }}
-          ref: ${{ env.DEPLOY_BRANCH }}
-          path: .deploy_git
-
-      - name: Use Node.js ${{ matrix.node_version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node_version }}
-
-      - name: Configuration environment
-        env:
-          HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}
-        run: |
-          sudo timedatectl set-timezone "Asia/Shanghai"
-          mkdir -p ~/.ssh/
-          echo "$HEXO_DEPLOY_PRI" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.name $GIT_USER
-          git config --global user.email $GIT_EMAIL
-          cp _config.theme.yml themes/concise/_config.yml
-
-      - name: Install dependencies
-        run: |
-          npm install
-
-      - name: Deploy hexo
-        run: |
-          npm run deploy
-
-name: CI
-on:
-  push:
-    branches:
-      - hexo
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Checkout source
         uses: actions/checkout@v1
         with:
           ref: hexo
+
       - name: Use Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v1
         with:
           version: ${{ matrix.node_version }}
-      - name: Setup hexo
+
+      - name: Configuration environment
         env:
           ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
         run: |
@@ -94,8 +38,12 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.name $GIT_USER
           git config --global user.email $GIT_EMAIL
+
+      - name: Install dependencies
+        run: |
           npm install hexo-cli -g
           npm install
+
       - name: Hexo deploy
         run: |
           hexo clean
